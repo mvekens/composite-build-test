@@ -1,0 +1,22 @@
+apply plugin: 'java-gradle-plugin'
+
+group = 'com.example'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation(platform('org.springframework.boot:spring-boot-dependencies:2.1.0.RELEASE'))
+    implementation('org.springframework.boot:spring-boot-starter')
+}
+
+gradlePlugin {
+    plugins {
+        myPlugin {
+            id = 'com.example.my-plugin'
+            implementationClass = 'com.example.MyPlugin'
+        }
+    }
+}
+
